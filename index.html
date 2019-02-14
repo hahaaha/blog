@@ -233,6 +233,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/java-io系列（一）文件的写入和读取/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Code Coder Developer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/13/java-io系列（一）文件的写入和读取/" itemprop="url">java io系列（一）文件的写入和读取</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T17:29:24+08:00">
+                2019-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。</p>
+<p>java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。</p>
+<h4 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h4><p>在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。</p>
+<blockquote>
+<p>下面是FileInputStream的方法以及方法的描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public int read(int r)throws IOException{}<br>这个方法从 InputStream对象读取指定字节的数据。返回为整数值。返回下一字节数据，如果已经到结尾则返回-1。</td>
+</tr>
+<tr>
+<td>public int read(byte[] r) throws IOException{}<br>这个方法从输入流读取r.length长度的字节。返回读取的字节数。如果是文件结尾则返回-1。</td>
+</tr>
+<tr>
+<td>public void close() throws IOException{}<br>关闭此文件输入流并释放与此流有关的所有系统资源。抛出IOException异常。</td>
+</tr>
+<tr>
+<td>public int available() throws IOException{}<br>返回下一次对此输入流调用的方法可以不受阻塞地从此输入流读取的字节数。返回一个整数值。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>下面是FileOutputStream的方法和描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void write(int w)throws IOException{}<br>这个方法把指定的字节写到输出流中。</td>
+</tr>
+<tr>
+<td>public void write(byte[] w)<br>把指定数组中w.length长度的字节写到OutputStream中。</td>
+</tr>
+<tr>
+<td>protected void finalize()throws IOException {}<br>这个方法清除与该文件的连接。确保在不再引用文件输入流时调用其 close 方法。抛出IOException异常。</td>
+</tr>
+<tr>
+<td>public void close() throws IOException{}<br>关闭此文件输入流并释放与此流有关的所有系统资源。抛出IOException异常。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 写入文件</span><br><span class="line">// OutputStream write方法用法</span><br><span class="line">// public void write(int w) throws IOException&#123;&#125;</span><br><span class="line">// public void write(byte[] w)</span><br><span class="line">OutputStream os = new FileOutputStream(&quot;text.txt&quot;);</span><br><span class="line">String one = &quot;one&quot;;</span><br><span class="line">os.write(one.getBytes());</span><br><span class="line">os.close();</span><br><span class="line"></span><br><span class="line">// 读取文件内容</span><br><span class="line">InputStream is = new FileInputStream(&quot;text.txt&quot;);</span><br><span class="line">int read = is.read();</span><br><span class="line">while(read != -1) &#123;</span><br><span class="line">    System.out.print((char) read);</span><br><span class="line">    read = is.read();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p>使用字符流时，并不是直接将内容直接写入文件中，而是先将字符写入缓存区中，然后再将缓存区中的内容转换为字节写入文件中。</p>
+<p>还有一点需要注意的是，FileWriter和FileReader分别是从OutputStreamWriter、InputStreamReader类继承而来。</p>
+<blockquote>
+<p> 下面是FileWrite的方法和描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void write(int c) throws IOException<br>写入单个字符c。</td>
+</tr>
+<tr>
+<td>public void write(byte[] w)<br>把指定数组中w.length长度的字节写到OutputStream中。</td>
+</tr>
+<tr>
+<td>public void write(char [] c, int offset, int len)<br>写入字符数组中开始为offset长度为len的某一部分。</td>
+</tr>
+<tr>
+<td>public void write(String s, int offset, int len)<br>写入字符串中开始为offset长度为len的某一部分。</td>
+</tr>
+<tr>
+<td>public void flush()<br>刷新缓存区，将缓存区内容写入文件中，但不关闭流</td>
+</tr>
+<tr>
+<td>public void close()<br>首先刷新缓存区，然后关闭流</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 在指定文件中写入内容</span><br><span class="line">FileWrite fr = new FileWrite(&quot;text1.txt&quot;);</span><br><span class="line">String one = &quot;人生果&quot;;</span><br><span class="line">fw.write(one);</span><br><span class="line">fw.close();</span><br><span class="line"></span><br><span class="line">// 读取文件中的内容</span><br><span class="line">FileReader fr = new FileReader(&quot;text1.txt&quot;);</span><br><span class="line">int read = fr.read();</span><br><span class="line">while(read != -1) &#123;</span><br><span class="line">    read = fr.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fr.close();</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/spring-mvc初入门/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -674,7 +884,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

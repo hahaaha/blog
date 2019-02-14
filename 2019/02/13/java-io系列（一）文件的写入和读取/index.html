@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。 java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。 字节流在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。  下面是FileInputStream的方法以及方法的描述">
 <meta name="keywords" content="code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/11/29/hello-world/index.html">
+<meta property="og:title" content="java io系列（一）文件的写入和读取">
+<meta property="og:url" content="http://yoursite.com/2019/02/13/java-io系列（一）文件的写入和读取/index.html">
 <meta property="og:site_name" content="Code Coder Developer">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。 java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。 字节流在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。  下面是FileInputStream的方法以及方法的描述">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-19T07:00:33.786Z">
+<meta property="og:updated_time" content="2019-02-14T02:09:07.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="java io系列（一）文件的写入和读取">
+<meta name="twitter:description" content="java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。 java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。 字节流在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。  下面是FileInputStream的方法以及方法的描述">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/29/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/13/java-io系列（一）文件的写入和读取/">
 
 
 
 
 
-  <title>Hello World | Code Coder Developer</title>
+  <title>java io系列（一）文件的写入和读取 | Code Coder Developer</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/13/java-io系列（一）文件的写入和读取/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="haha">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">java io系列（一）文件的写入和读取</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-29T17:27:06+08:00">
-                2018-11-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-13T17:29:24+08:00">
+                2019-02-13
               </time>
             
 
@@ -300,15 +300,97 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。</p>
+<p>java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。</p>
+<h4 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h4><p>在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。</p>
+<blockquote>
+<p>下面是FileInputStream的方法以及方法的描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public int read(int r)throws IOException{}<br>这个方法从 InputStream对象读取指定字节的数据。返回为整数值。返回下一字节数据，如果已经到结尾则返回-1。</td>
+</tr>
+<tr>
+<td>public int read(byte[] r) throws IOException{}<br>这个方法从输入流读取r.length长度的字节。返回读取的字节数。如果是文件结尾则返回-1。</td>
+</tr>
+<tr>
+<td>public void close() throws IOException{}<br>关闭此文件输入流并释放与此流有关的所有系统资源。抛出IOException异常。</td>
+</tr>
+<tr>
+<td>public int available() throws IOException{}<br>返回下一次对此输入流调用的方法可以不受阻塞地从此输入流读取的字节数。返回一个整数值。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>下面是FileOutputStream的方法和描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void write(int w)throws IOException{}<br>这个方法把指定的字节写到输出流中。</td>
+</tr>
+<tr>
+<td>public void write(byte[] w)<br>把指定数组中w.length长度的字节写到OutputStream中。</td>
+</tr>
+<tr>
+<td>protected void finalize()throws IOException {}<br>这个方法清除与该文件的连接。确保在不再引用文件输入流时调用其 close 方法。抛出IOException异常。</td>
+</tr>
+<tr>
+<td>public void close() throws IOException{}<br>关闭此文件输入流并释放与此流有关的所有系统资源。抛出IOException异常。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 写入文件</span><br><span class="line">// OutputStream write方法用法</span><br><span class="line">// public void write(int w) throws IOException&#123;&#125;</span><br><span class="line">// public void write(byte[] w)</span><br><span class="line">OutputStream os = new FileOutputStream(&quot;text.txt&quot;);</span><br><span class="line">String one = &quot;one&quot;;</span><br><span class="line">os.write(one.getBytes());</span><br><span class="line">os.close();</span><br><span class="line"></span><br><span class="line">// 读取文件内容</span><br><span class="line">InputStream is = new FileInputStream(&quot;text.txt&quot;);</span><br><span class="line">int read = is.read();</span><br><span class="line">while(read != -1) &#123;</span><br><span class="line">    System.out.print((char) read);</span><br><span class="line">    read = is.read();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p>使用字符流时，并不是直接将内容直接写入文件中，而是先将字符写入缓存区中，然后再将缓存区中的内容转换为字节写入文件中。</p>
+<p>还有一点需要注意的是，FileWriter和FileReader分别是从OutputStreamWriter、InputStreamReader类继承而来。</p>
+<blockquote>
+<p> 下面是FileWrite的方法和描述</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>方法及描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void write(int c) throws IOException<br>写入单个字符c。</td>
+</tr>
+<tr>
+<td>public void write(byte[] w)<br>把指定数组中w.length长度的字节写到OutputStream中。</td>
+</tr>
+<tr>
+<td>public void write(char [] c, int offset, int len)<br>写入字符数组中开始为offset长度为len的某一部分。</td>
+</tr>
+<tr>
+<td>public void write(String s, int offset, int len)<br>写入字符串中开始为offset长度为len的某一部分。</td>
+</tr>
+<tr>
+<td>public void flush()<br>刷新缓存区，将缓存区内容写入文件中，但不关闭流</td>
+</tr>
+<tr>
+<td>public void close()<br>首先刷新缓存区，然后关闭流</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>示例代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 在指定文件中写入内容</span><br><span class="line">FileWrite fr = new FileWrite(&quot;text1.txt&quot;);</span><br><span class="line">String one = &quot;人生果&quot;;</span><br><span class="line">fw.write(one);</span><br><span class="line">fw.close();</span><br><span class="line"></span><br><span class="line">// 读取文件中的内容</span><br><span class="line">FileReader fr = new FileReader(&quot;text1.txt&quot;);</span><br><span class="line">int read = fr.read();</span><br><span class="line">while(read != -1) &#123;</span><br><span class="line">    read = fr.read();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fr.close();</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -333,15 +415,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/10/spring-mvc初入门/" rel="next" title="spring mvc初入门">
+                <i class="fa fa-chevron-left"></i> spring mvc初入门
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/19/vsftpd的搭建和简单使用/" rel="prev" title="vsftpd的搭建和简单使用">
-                vsftpd的搭建和简单使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#字节流"><span class="nav-number">1.</span> <span class="nav-text">字节流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符流"><span class="nav-number">2.</span> <span class="nav-text">字符流</span></a></li></ol></div>
             
 
           </div>
