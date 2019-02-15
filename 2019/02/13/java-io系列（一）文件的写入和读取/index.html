@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Code Coder Developer">
 <meta property="og:description" content="java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。 java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。 字节流在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。  下面是FileInputStream的方法以及方法的描述">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-14T02:09:07.315Z">
+<meta property="og:updated_time" content="2019-02-15T05:59:58.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java io系列（一）文件的写入和读取">
 <meta name="twitter:description" content="java.io主要用途是，系统上的文件和目录的创建以及文件的内容的读取和写入。 java io分为两种模式，一种是字节流，一种是字符流。但是字节流使用的更广泛一些，这是因为所有的文件在硬盘或者传输中都是用字节来进行传输的。 字节流在字节流中，java使用FileInputStream和FileOutputStream来进行输入流和输出流。  下面是FileInputStream的方法以及方法的描述">
@@ -356,7 +356,7 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 写入文件</span><br><span class="line">// OutputStream write方法用法</span><br><span class="line">// public void write(int w) throws IOException&#123;&#125;</span><br><span class="line">// public void write(byte[] w)</span><br><span class="line">OutputStream os = new FileOutputStream(&quot;text.txt&quot;);</span><br><span class="line">String one = &quot;one&quot;;</span><br><span class="line">os.write(one.getBytes());</span><br><span class="line">os.close();</span><br><span class="line"></span><br><span class="line">// 读取文件内容</span><br><span class="line">InputStream is = new FileInputStream(&quot;text.txt&quot;);</span><br><span class="line">int read = is.read();</span><br><span class="line">while(read != -1) &#123;</span><br><span class="line">    System.out.print((char) read);</span><br><span class="line">    read = is.read();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p>使用字符流时，并不是直接将内容直接写入文件中，而是先将字符写入缓存区中，然后再将缓存区中的内容转换为字节写入文件中。</p>
-<p>还有一点需要注意的是，FileWriter和FileReader分别是从OutputStreamWriter、InputStreamReader类继承而来。</p>
+<p>需要注意的是，FileWriter和FileReader分别是从OutputStreamWriter、InputStreamReader类继承而来。还有一点需要注意的是，FileWrite由于使用字符流的原因，需要使用flush()或者close()来将缓冲区中的内容放入文件中。</p>
 <blockquote>
 <p> 下面是FileWrite的方法和描述</p>
 </blockquote>
