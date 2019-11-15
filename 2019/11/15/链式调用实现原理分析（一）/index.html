@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="java是一门面向对象的语言，在java中我们将会使用到大量的对象。所以在写java程序中我们免不了声明对象，但是我们声明好的对象名只是对于对象空间的“引用”,这个“引用”只是指向包含对象内容的内存空间而已。和基本类型是不相同的，基本类型是“值”本身的使用。 例子1234567891011// 其中的new用来开辟一个空间来保存ArrayList类的内容List list = new ArrayL">
+<meta name="description" content="在使用js库的过程中，经常能见到链式调用，使用起来也非常直观。你也许会想这种形式改如下实现呢，下面我就来解析下，链式调用如何实现。 链式调用的形式首先我们先来看下链式调用的形式123queue.addPerson(&amp;quot;haha&amp;quot;)       .addPerson(&amp;quot;haha1&amp;quot;)       .del() 看起来非常的直观，不需要书写类名 链式调用的实现链式">
 <meta name="keywords" content="code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java对象的引用">
-<meta property="og:url" content="http://yoursite.com/2019/04/01/java对象的引用/index.html">
+<meta property="og:title" content="链式调用实现原理分析（一）">
+<meta property="og:url" content="http://yoursite.com/2019/11/15/链式调用实现原理分析（一）/index.html">
 <meta property="og:site_name" content="Code Coder Developer">
-<meta property="og:description" content="java是一门面向对象的语言，在java中我们将会使用到大量的对象。所以在写java程序中我们免不了声明对象，但是我们声明好的对象名只是对于对象空间的“引用”,这个“引用”只是指向包含对象内容的内存空间而已。和基本类型是不相同的，基本类型是“值”本身的使用。 例子1234567891011// 其中的new用来开辟一个空间来保存ArrayList类的内容List list = new ArrayL">
+<meta property="og:description" content="在使用js库的过程中，经常能见到链式调用，使用起来也非常直观。你也许会想这种形式改如下实现呢，下面我就来解析下，链式调用如何实现。 链式调用的形式首先我们先来看下链式调用的形式123queue.addPerson(&amp;quot;haha&amp;quot;)       .addPerson(&amp;quot;haha1&amp;quot;)       .del() 看起来非常的直观，不需要书写类名 链式调用的实现链式">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pp9wp78ln.bkt.clouddn.com/DDD.jpg">
-<meta property="og:updated_time" content="2019-04-01T08:40:31.327Z">
+<meta property="og:updated_time" content="2019-11-15T03:34:38.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java对象的引用">
-<meta name="twitter:description" content="java是一门面向对象的语言，在java中我们将会使用到大量的对象。所以在写java程序中我们免不了声明对象，但是我们声明好的对象名只是对于对象空间的“引用”,这个“引用”只是指向包含对象内容的内存空间而已。和基本类型是不相同的，基本类型是“值”本身的使用。 例子1234567891011// 其中的new用来开辟一个空间来保存ArrayList类的内容List list = new ArrayL">
-<meta name="twitter:image" content="http://pp9wp78ln.bkt.clouddn.com/DDD.jpg">
+<meta name="twitter:title" content="链式调用实现原理分析（一）">
+<meta name="twitter:description" content="在使用js库的过程中，经常能见到链式调用，使用起来也非常直观。你也许会想这种形式改如下实现呢，下面我就来解析下，链式调用如何实现。 链式调用的形式首先我们先来看下链式调用的形式123queue.addPerson(&amp;quot;haha&amp;quot;)       .addPerson(&amp;quot;haha1&amp;quot;)       .del() 看起来非常的直观，不需要书写类名 链式调用的实现链式">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/01/java对象的引用/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/15/链式调用实现原理分析（一）/">
 
 
 
 
 
-  <title>java对象的引用 | Code Coder Developer</title>
+  <title>链式调用实现原理分析（一） | Code Coder Developer</title>
   
 
 
@@ -235,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/java对象的引用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/链式调用实现原理分析（一）/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="haha">
@@ -252,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java对象的引用</h1>
+          <h1 class="post-title" itemprop="name headline">链式调用实现原理分析（一）</h1>
         
 
         <div class="post-meta">
@@ -264,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-01T16:33:05+08:00">
-                2019-04-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-15T11:20:41+08:00">
+                2019-11-15
               </time>
             
 
@@ -302,11 +300,12 @@
       
 
       
-        <p>java是一门面向对象的语言，在java中我们将会使用到大量的对象。所以在写java程序中我们免不了声明对象，但是我们声明好的对象名只是对于对象空间的“引用”,这个“引用”只是指向包含对象内容的内存空间而已。和基本类型是不相同的，基本类型是“值”本身的使用。<br><img src="http://pp9wp78ln.bkt.clouddn.com/DDD.jpg" alt="java对象引用"></p>
-<p>例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 其中的new用来开辟一个空间来保存ArrayList类的内容</span><br><span class="line">List list = new ArrayList();</span><br><span class="line"></span><br><span class="line">// 将list1的引用也指向list对应的内存空间</span><br><span class="line">List list1 = list;</span><br><span class="line"></span><br><span class="line">// 向list中增加内容</span><br><span class="line">list.add(&quot;one&quot;);</span><br><span class="line"></span><br><span class="line">// 将会输出list中增加的内容</span><br><span class="line">System.out.println(list.get(0));</span><br></pre></td></tr></table></figure></p>
-<p>使用一个基本类型的例子来对比一下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int a = 1;</span><br><span class="line">int b = a;</span><br><span class="line"></span><br><span class="line">a = 2;</span><br><span class="line"></span><br><span class="line">// 将会输出2</span><br><span class="line">System.out.println(a);</span><br><span class="line">// 将会输出1</span><br><span class="line">System.out.println(b);</span><br></pre></td></tr></table></figure>
-<p>从上面的例子里可以看出来，基本类型是直接把值进行传递</p>
+        <p>在使用js库的过程中，经常能见到链式调用，使用起来也非常直观。你也许会想这种形式改如下实现呢，下面我就来解析下，链式调用如何实现。</p>
+<h4 id="链式调用的形式"><a href="#链式调用的形式" class="headerlink" title="链式调用的形式"></a>链式调用的形式</h4><p>首先我们先来看下链式调用的形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">queue.addPerson(&quot;haha&quot;)</span><br><span class="line">       .addPerson(&quot;haha1&quot;)</span><br><span class="line">       .del()</span><br></pre></td></tr></table></figure></p>
+<p>看起来非常的直观，不需要书写类名</p>
+<h4 id="链式调用的实现"><a href="#链式调用的实现" class="headerlink" title="链式调用的实现"></a>链式调用的实现</h4><p>链式调用的关键点在于，在方法结束的时候return 一个this，用来返回实例对象，以此来拥有继续调用类中方法的能力。例子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let queue =function() &#123;</span><br><span class="line">    this.personQueue = []</span><br><span class="line">    this.addPerson = function(name) &#123;</span><br><span class="line">        this.personQueue.push(name)</span><br><span class="line">        return this</span><br><span class="line">    &#125;</span><br><span class="line">    this.del = function() &#123;</span><br><span class="line">        this.personQueue.shift()</span><br><span class="line">        return this</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let t = new queue()</span><br><span class="line">t.addPerson(&quot;haha&quot;).addPerson(&quot;haha1&quot;).addPerson(&quot;haah2&quot;).del()</span><br><span class="line">console.log(t.personQueue)</span><br><span class="line">// output [&quot;haha1&quot;,&quot;haha2&quot;]</span><br></pre></td></tr></table></figure>
+<p>在一些js库中，它们还会基于链式调用来进行一些复杂的应用，后续我会继续进行分析。</p>
 
       
     </div>
@@ -331,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/13/java-io系列（一）文件的写入和读取/" rel="next" title="java io系列（一）文件的写入和读取">
-                <i class="fa fa-chevron-left"></i> java io系列（一）文件的写入和读取
+              <a href="/2019/04/01/java对象的引用/" rel="next" title="java对象的引用">
+                <i class="fa fa-chevron-left"></i> java对象的引用
               </a>
             
           </div>
@@ -340,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/15/链式调用实现原理分析（一）/" rel="prev" title="链式调用实现原理分析（一）">
-                链式调用实现原理分析（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,8 +390,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -449,6 +453,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#链式调用的形式"><span class="nav-number">1.</span> <span class="nav-text">链式调用的形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式调用的实现"><span class="nav-number">2.</span> <span class="nav-text">链式调用的实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
